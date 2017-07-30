@@ -1,0 +1,39 @@
+options:
+  languages: ["java", "scala:2.11.8"]
+  versionConflictPolicy: highest
+  transitivity: runtime_deps
+  resolvers:
+    - id: mavencentral
+      type: default
+      url: https://repo.maven.apache.org/maven2/
+
+dependencies:
+  com.beust:
+    jcommander:
+      version: "1.60"
+      lang: java
+
+  org.apache.spark:
+    spark:
+      version: "2.2.0"
+      modules: [core, sql, mllib, mllib-local, hive, catalyst, graphx, streaming, tags, unsafe, network-common, network-shuffle, launcher]
+      lang: scala
+
+  org.jblas:
+    jblas:
+      version: "1.2.4"
+      lang: java
+
+  org.scala-lang:
+    scala-xml:
+      version: "2.11.0-M4"
+      lang: java
+
+replacements:
+  org.scala-lang:
+    scala-library:
+      lang: scala/unmangled # scala-library is not mangled like sbt does with other jars
+      target: "//3rdparty/manual:scala_library_file"
+    scala-reflect:
+      lang: scala/unmangled
+      target: "//3rdparty/manual:scala_reflect_file"

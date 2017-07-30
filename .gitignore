@@ -1,0 +1,22 @@
+#use glob syntax.
+syntax: glob
+
+.DS_Store
+/**/.DS_Store
+/**/*.jar
+/bazel-*
+
+*.class
+*~
+*.bak
+
+# idea
+.idea
+*.iml
+
+# building
+target
+build.log
+
+*.pyc
+/.idea

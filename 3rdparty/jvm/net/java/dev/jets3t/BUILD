@@ -1,0 +1,11 @@
+java_library(name = "jets3t",
+             exports = ["//external:jar/net/java/dev/jets3t/jets3t"],
+             runtime_deps = ["//3rdparty/jvm/com/jamesmurty/utils:java_xmlbuilder",
+                             "//3rdparty/jvm/commons_codec:commons_codec",
+                             "//3rdparty/jvm/javax/activation:activation",
+                             "//3rdparty/jvm/javax/mail:mail",
+                             "//3rdparty/jvm/mx4j:mx4j",
+                             "//3rdparty/jvm/org/apache/httpcomponents:httpclient",
+                             "//3rdparty/jvm/org/apache/httpcomponents:httpcore",
+                             "//3rdparty/jvm/org/bouncycastle:bcprov_jdk15on"],
+             visibility = ["//visibility:public"])
